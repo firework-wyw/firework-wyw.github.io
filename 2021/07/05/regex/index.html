@@ -13,7 +13,7 @@
           content="ecomfe">
     
     
-    <title>Hello World | Hexo</title>
+    <title>regex | Hexo</title>
     
 
     
@@ -45,6 +45,8 @@
     <dl class="tags">
         <dt>标签</dt>
         
+            <dd><a href="/tags/计算机基础/">计算机基础</a> <small>(1)</small></dd>
+        
             <dd><a href="/tags/Bug/">Bug</a> <small>(1)</small></dd>
         
             <dd><a href="/tags/随笔/">随笔</a> <small>(1)</small></dd>
@@ -60,32 +62,46 @@
 
 <article>
     
-        <h1>Hello World</h1>
+        <h1>regex</h1>
     
 
     <div class="article-meta">
         
 
-        <time datetime="2021-07-02T09:29:55.923Z" itemprop="datePublished"><i class="fa fa-clock-o"></i> 2021-07-02</time>
+        <time datetime="2021-07-05T05:04:05.000Z" itemprop="datePublished"><i class="fa fa-clock-o"></i> 2021-07-05</time>
 
         
+    
+    <span class="article-tags"><i class="fa fa-tag"></i> <a href="/tags/计算机基础/">计算机基础</a></span>
+
 
     </div>
 
     
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+        <p>#什么是正则表达式？</p>
+<blockquote>
+<p>正则表达式大概类似于输出语句中的占位符<br>#匹配规则</p>
+<ul>
+<li>正则表达式的匹配规则是从左到右按规则匹配，如果表达式中有特殊字符，就用<code>\</code>转义，例如，正则表达式<code>a\&amp;c</code>,其中<code>\&amp;</code>是用来匹配特殊字符<code>&amp;</code>的</li>
+<li>正则表达式在java代码中也是一个字符串，所以，对于正则表达式<code>a\&amp;c</code>来说，对应的java字符串是<code>a\\&amp;c</code>，因为<code>\</code>也是java字符串的转义字符，两个<code>\\</code>实际表示的是一个<code>\</code></li>
+</ul>
+</blockquote>
+<hr>
+<blockquote>
+<ul>
+<li>匹配任意字符，例如正则表达式<code>a.c</code>中间的<code>.</code>可以匹配一个任意字符</li>
+<li>匹配数字，如果想匹配<code>0~9</code>这样的数字，可以用<code>\d</code>匹配</li>
+<li>匹配常用字符，用<code>\w</code>可以匹配一个字母、数字或下划线，<code>w</code>的意思是<code>word</code></li>
+<li>匹配空格字符，用<code>\s</code>可以匹配一个空格字符，注意空格字符不但包括空格<code> </code>，还包括<code>tab</code>字符（在java中用<code>\t</code>表示）</li>
+<li>匹配非数字，用<code>\D</code>匹配非数字，于<code>\d</code>刚好相反，类似的<code>\W</code>可以匹配<code>\w</code>不能匹配的字符，<code>\S</code>匹配<code>\s</code>不能匹配的字符</li>
+<li>重复匹配，修饰符<code>*</code>可以匹配任意个字符，包括0个字符</li>
+<li>修饰符<code>+</code> 可以匹配至少一个字符</li>
+<li>修饰符<code>?</code>可以匹配0个或一个字符</li>
+<li>匹配n个字符，用<code>&#123;n&#125;</code>就可以</li>
+<li>如果匹配n~m个字符，可以使用<code>&#123;n,m&#125;</code></li>
+<li>修饰符<code>&#123;n,&#125;</code>表示至少匹配n个字符</li>
+</ul>
+</blockquote>
 
     
 </article>
@@ -95,6 +111,8 @@
 </div>
 <nav class="article-pagination">
     
+    <a href="/2021/07/05/hello-world/" class="article-prev">前一篇: Hello World</a>
+    
     
     <a href="/2021/07/02/fix-bug/" class="article-next">后一篇: 与Bug的233</a>
     
@@ -103,7 +121,7 @@
 <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a></div>
 <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"32"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
 
-<div class="ds-thread" data-thread-key="2021/07/02/hello-world/" data-title="Hello World" data-url="https://firework-wyw.github.io/2021/07/02/hello-world/"></div>
+<div class="ds-thread" data-thread-key="2021/07/05/regex/" data-title="regex" data-url="https://firework-wyw.github.io/2021/07/05/regex/"></div>
 <script>
 var duoshuoQuery = {short_name:"baidu-efe"};
 (function() {
