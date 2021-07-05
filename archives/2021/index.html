@@ -45,7 +45,7 @@
     <dl class="tags">
         <dt>标签</dt>
         
-            <dd><a href="/tags/计算机基础/">计算机基础</a> <small>(1)</small></dd>
+            <dd><a href="/tags/计算机基础/">计算机基础</a> <small>(2)</small></dd>
         
             <dd><a href="/tags/Bug/">Bug</a> <small>(1)</small></dd>
         
@@ -69,7 +69,7 @@
     <div class="article-meta">
         
 
-        <time datetime="2021-07-05T05:53:02.197Z" itemprop="datePublished"><i class="fa fa-clock-o"></i> 2021-07-05</time>
+        <time datetime="2021-07-05T07:16:44.653Z" itemprop="datePublished"><i class="fa fa-clock-o"></i> 2021-07-05</time>
 
         
 
@@ -90,6 +90,85 @@
 
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 
+    
+</article>
+
+
+
+    <article class="article-index">
+    
+        <h2><a href="/2021/07/05/regex2/">复杂匹配规则</a></h2>
+    
+
+    <div class="article-meta">
+        
+
+        <time datetime="2021-07-05T05:57:30.000Z" itemprop="datePublished"><i class="fa fa-clock-o"></i> 2021-07-05</time>
+
+        
+    
+    <span class="article-tags"><i class="fa fa-tag"></i> <a href="/tags/计算机基础/">计算机基础</a></span>
+
+
+    </div>
+
+    
+        <p>匹配开头和结尾</p>
+<blockquote>
+<p>用<code>^</code>表示开头，用<code>$</code>表示结尾</p>
+</blockquote>
+<p>匹配指定范围</p>
+<blockquote>
+<ul>
+<li><font color="red">[123456789]</font>可以匹配<font color="red">[1~9]</font>，还有另外一种表示方法<font color="red">[0-9a-fA-F]</font>，<br>还有一种排除法，即不包含指定范围的字符。<font color="red">[^1-9]</font></li>
+</ul>
+</blockquote>
+<p>或规则匹配</p>
+<blockquote>
+<ul>
+<li>用<code>|</code>连接的两个正则规则是或规则，例如<font color="red">AB|CD</font></li>
+</ul>
+</blockquote>
+<p>使用括号</p>
+<blockquote>
+<ul>
+<li>如果匹配字符串<font color="red">learn java</font>、<font color="red">learn php</font>、<font color="red">learn go</font>，可以这样写<code>learn\\s(java|php|go)</code></li>
+</ul>
+</blockquote>
+<p>分组匹配</p>
+<blockquote>
+<ul>
+<li>如何正则匹配<font color="red">区号-电话号</font>这个规则，按照前边的介绍完全可以匹配到，但是匹配成功后，如何区分区号和电话号码，分别存入数据库。<br>也就是如何提取匹配的子串？<br>正确的方法是用<font color="red">(…)</font>先把要提取的规则分组，然后引入<code>java.until.regex</code>包，用<code>Pattern</code>对象匹配，匹配获得一个<code>Matcher</code>对象，如果匹配成功，可以直接从<code>Matcher.group(index)</code>返回子串</li>
+</ul>
+</blockquote>
+<p>非贪婪匹配</p>
+<blockquote>
+<ul>
+<li>给定一个字符串表示的数字，判断该数字末尾<code>0</code>的个数，例如<code>123000</code>末尾3个<code>0</code>，<code>10010</code>末尾1个<code>0</code>。<br>我们的思路是这样的：利用分组匹配把字符串分为末尾为<code>0</code>的部分和其余部分，正则表达式可以这样写：&lt;font color=”red&gt;(\d+)(0*)</font><br>然而事情并不是我们想象的那样，为<code>0</code>的那部分始终为空，因为<font>(\d+)</font>已经包含匹配后面的<code>0</code>，第二部分规则根本没机会<br>所以我们要让<font color="red">(\d+)</font>少匹配，让<font color="red">(0*)</font>尽量多匹配，就必须使用非贪婪规则。<br>在规则<font color="red">(\d+)</font>后面加<font color="red">?</font>即可表示非贪婪匹配</li>
+</ul>
+</blockquote>
+<p>反向引用</p>
+<blockquote>
+<p>*如果我们要把搜索到的指定字符串按规则替换，比如前后各加一个<font color="red">xxxx</font></p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        String s = <span class="string">&quot;the quick brown fox jumps over the lazy dog.&quot;</span>;</span><br><span class="line">        String r = s.replaceAll(<span class="string">&quot;\\s([a-z]&#123;4&#125;)\\s&quot;</span>,<span class="string">&quot;&lt;b&gt;$1&lt;/b&gt;&quot;</span>);</span><br><span class="line">        System.out.println(r);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上述代码运行的结果就是:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">the quick brown fox jumps <span class="tag">&lt;<span class="name">b</span>&gt;</span>over<span class="tag">&lt;/<span class="name">b</span>&gt;</span> the <span class="tag">&lt;<span class="name">b</span>&gt;</span>lazy<span class="tag">&lt;/<span class="name">b</span>&gt;</span> dog.</span><br></pre></td></tr></table></figure>
+<p>它实际上把任何4字符单词的前后用<font color="red">xxxx</font>括起来</p>
+<p>模板引擎</p>
+<blockquote>
+<p>*模板引擎是指，定义一个字符串作为模板：</p>
+</blockquote>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello,$&#123;name&#125;! You are learning $&#123;lang&#125;!</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>其中<font color="red">${key}</font>，也就是被替换的内容，当传入一个<br><code>Map&lt;String,String&gt;</code>给模板后，将key替换为value的值<br>例如，传入<font color="red">Map</font>为：</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;name&quot;:&quot;Bob&quot;,</span><br><span class="line">    &quot;lang&quot;:&quot;Java&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>最终输出结果为：</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello,Bob!You are learning Java!</span><br></pre></td></tr></table></figure>
     
 </article>
 
