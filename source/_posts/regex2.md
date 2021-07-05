@@ -28,3 +28,41 @@ tags: 计算机基础
 > 所以我们要让<font color="red">(\d+)</font>少匹配，让<font color="red">(0*)</font>尽量多匹配，就必须使用非贪婪规则。
 > 在规则<font color="red">(\d+)</font>后面加<font color="red">?</font>即可表示非贪婪匹配
 
+反向引用
+>*如果我们要把搜索到的指定字符串按规则替换，比如前后各加一个<font color="red">xxxx</font>
+ 
+```java
+public class Main{
+    public static void main(String[] args){
+        String s = "the quick brown fox jumps over the lazy dog.";
+        String r = s.replaceAll("\\s([a-z]{4})\\s","<b>$1</b>");
+        System.out.println(r);
+    }
+}
+```
+
+上述代码运行的结果就是:
+```html
+the quick brown fox jumps <b>over</b> the <b>lazy</b> dog.
+```
+它实际上把任何4字符单词的前后用<font color="red">xxxx</font>括起来
+
+模板引擎
+>*模板引擎是指，定义一个字符串作为模板：
+
+ ```html
+Hello,${name}! You are learning ${lang}!
+```
+>其中<font color="red">${key}</font>，也就是被替换的内容，当传入一个
+>`Map<String,String>`给模板后，将key替换为value的值
+>例如，传入<font color="red">Map</font>为：
+```html
+{
+    "name":"Bob",
+    "lang":"Java"
+}
+```
+>最终输出结果为：
+```html
+Hello,Bob!You are learning Java!
+```
