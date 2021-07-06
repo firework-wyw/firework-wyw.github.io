@@ -88,3 +88,22 @@ var encodedString = base64UrlEncode(header) + '.' + base64UrlEncode(payload);
 
 var signature = HMACSHA256(encodedString, 'secret'); // TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ
 ```
+最终可连接为最终的jwt
+```html
+  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ
+```
+>Tips:secret是在服务器端的，jwt的签发生成也是在服务器端，secret是服务器端的私钥，用于进行jwt的签发和验证，所以任何场景都不应该把secret泄露出去
+
+#应用
+一般在请求头里加入Authorization，并加上Bearer标注：
+```html
+fetch('api/user/1', {
+  headers: {
+    'Authorization': 'Bearer ' + token
+  }
+})
+
+```
+
+转载自：
+1.![什么是JWT](https://www.jianshu.com/p/576dbf44b2ae)
