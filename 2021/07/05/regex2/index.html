@@ -107,12 +107,14 @@
 <p>非贪婪匹配</p>
 <blockquote>
 <ul>
-<li>给定一个字符串表示的数字，判断该数字末尾<code>0</code>的个数，例如<code>123000</code>末尾3个<code>0</code>，<code>10010</code>末尾1个<code>0</code>。<br>我们的思路是这样的：利用分组匹配把字符串分为末尾为<code>0</code>的部分和其余部分，正则表达式可以这样写：&lt;font color=”red&gt;(\d+)(0*)</font><br>然而事情并不是我们想象的那样，为<code>0</code>的那部分始终为空，因为<font>(\d+)</font>已经包含匹配后面的<code>0</code>，第二部分规则根本没机会<br>所以我们要让<font color="red">(\d+)</font>少匹配，让<font color="red">(0*)</font>尽量多匹配，就必须使用非贪婪规则。<br>在规则<font color="red">(\d+)</font>后面加<font color="red">?</font>即可表示非贪婪匹配</li>
+<li>给定一个字符串表示的数字，判断该数字末尾<code>0</code>的个数，例如<code>123000</code>末尾3个<code>0</code>，<code>10010</code>末尾1个<code>0</code>。<br>我们的思路是这样的：利用分组匹配把字符串分为末尾为<code>0</code>的部分和其余部分，正则表达式可以这样写：<font color="red">(\d+)(0*)</font><br>然而事情并不是我们想象的那样，为<code>0</code>的那部分始终为空，因为<font>(\d+)</font>已经包含匹配后面的<code>0</code>，第二部分规则根本没机会<br>所以我们要让<font color="red">(\d+)</font>少匹配，让<font color="red">(0*)</font>尽量多匹配，就必须使用非贪婪规则。<br>在规则<font color="red">(\d+)</font>后面加<font color="red">?</font>即可表示非贪婪匹配</li>
 </ul>
 </blockquote>
 <p>反向引用</p>
 <blockquote>
-<p>*如果我们要把搜索到的指定字符串按规则替换，比如前后各加一个<font color="red">xxxx</font></p>
+<ul>
+<li>如果我们要把搜索到的指定字符串按规则替换，比如前后各加一个<font color="red">xxxx</font></li>
+</ul>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        String s = <span class="string">&quot;the quick brown fox jumps over the lazy dog.&quot;</span>;</span><br><span class="line">        String r = s.replaceAll(<span class="string">&quot;\\s([a-z]&#123;4&#125;)\\s&quot;</span>,<span class="string">&quot;&lt;b&gt;$1&lt;/b&gt;&quot;</span>);</span><br><span class="line">        System.out.println(r);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -121,7 +123,9 @@
 <p>它实际上把任何4字符单词的前后用<font color="red">xxxx</font>括起来</p>
 <p>模板引擎</p>
 <blockquote>
-<p>*模板引擎是指，定义一个字符串作为模板：</p>
+<ul>
+<li>模板引擎是指，定义一个字符串作为模板：</li>
+</ul>
 </blockquote>
  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello,$&#123;name&#125;! You are learning $&#123;lang&#125;!</span><br></pre></td></tr></table></figure>
 <blockquote>

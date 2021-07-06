@@ -79,28 +79,29 @@
     </div>
 
     
-        <p>#什么是正则表达式？</p>
-<blockquote>
-<p>正则表达式大概类似于输出语句中的占位符<br>#匹配规则</p>
+        <h1 id="什么是正则表达式？"><a href="#什么是正则表达式？" class="headerlink" title="什么是正则表达式？"></a>什么是正则表达式？</h1><blockquote>
+<p>正则表达式大概类似于输出语句中的占位符</p>
+</blockquote>
+<h1 id="匹配规则"><a href="#匹配规则" class="headerlink" title="匹配规则"></a>匹配规则</h1><blockquote>
 <ul>
-<li>正则表达式的匹配规则是从左到右按规则匹配，如果表达式中有特殊字符，就用<code>\</code>转义，例如，正则表达式<code>a\&amp;c</code>,其中<code>\&amp;</code>是用来匹配特殊字符<code>&amp;</code>的</li>
-<li>正则表达式在java代码中也是一个字符串，所以，对于正则表达式<code>a\&amp;c</code>来说，对应的java字符串是<code>a\\&amp;c</code>，因为<code>\</code>也是java字符串的转义字符，两个<code>\\</code>实际表示的是一个<code>\</code></li>
+<li>正则表达式的匹配规则是从左到右按规则匹配，如果表达式中有特殊字符，就用<font color="red">\</font>转义，例如，正则表达式<font color="red">a\&amp;c</font>,其中<font color="red">\&amp;</font>是用来匹配特殊字符<font color="red">&amp;</font>的</li>
+<li>正则表达式在java代码中也是一个字符串，所以，对于正则表达式<font color="red">a\&amp;c</font>来说，对应的java字符串是<font color="red">a\\&amp;c</font>，因为<font color="red">\</font>也是java字符串的转义字符，两个<font color="red">\</font>实际表示的是一个<font color="red">\</font></li>
 </ul>
 </blockquote>
 <hr>
 <blockquote>
 <ul>
-<li>匹配任意字符，例如正则表达式<code>a.c</code>中间的<code>.</code>可以匹配一个任意字符</li>
-<li>匹配数字，如果想匹配<code>0~9</code>这样的数字，可以用<code>\d</code>匹配</li>
-<li>匹配常用字符，用<code>\w</code>可以匹配一个字母、数字或下划线，<code>w</code>的意思是<code>word</code></li>
-<li>匹配空格字符，用<code>\s</code>可以匹配一个空格字符，注意空格字符不但包括空格<code> </code>，还包括<code>tab</code>字符（在java中用<code>\t</code>表示）</li>
-<li>匹配非数字，用<code>\D</code>匹配非数字，于<code>\d</code>刚好相反，类似的<code>\W</code>可以匹配<code>\w</code>不能匹配的字符，<code>\S</code>匹配<code>\s</code>不能匹配的字符</li>
-<li>重复匹配，修饰符<code>*</code>可以匹配任意个字符，包括0个字符</li>
-<li>修饰符<code>+</code> 可以匹配至少一个字符</li>
-<li>修饰符<code>?</code>可以匹配0个或一个字符</li>
-<li>匹配n个字符，用<code>&#123;n&#125;</code>就可以</li>
-<li>如果匹配n~m个字符，可以使用<code>&#123;n,m&#125;</code></li>
-<li>修饰符<code>&#123;n,&#125;</code>表示至少匹配n个字符</li>
+<li>匹配任意字符，例如正则表达式<font color="red">a.c</font>中间的<font color="red">.</font>可以匹配一个任意字符</li>
+<li>匹配数字，如果想匹配<font color="red">0~9</font>这样的数字，可以用<font color="red">\d</font>匹配</li>
+<li>匹配常用字符，用<font color="red">\w</font>可以匹配一个字母、数字或下划线，<font color="red">w</font>的意思是<font color="red">word</font></li>
+<li>匹配空格字符，用<font color="red">\s</font>可以匹配一个空格字符，注意空格字符不但包括空格<code> </code>，还包括<font color="red">tab</font>字符（在java中用<font color="red">\t</font>表示）</li>
+<li>匹配非数字，用<font color="red">\D</font>匹配非数字，于<font color="red">\d</font>刚好相反，类似的<font color="red">\W</font>可以匹配<font color="red">\w</font>不能匹配的字符，<font coloe="red">\S</font>匹配<font color="red">\s</font>不能匹配的字符</li>
+<li>重复匹配，修饰符<font color="red">*</font>可以匹配任意个字符，包括0个字符</li>
+<li>修饰符<font color="red">+</font> 可以匹配至少一个字符</li>
+<li>修饰符<font color="red">?</font>可以匹配0个或一个字符</li>
+<li>匹配n个字符，用&lt;font color=”red’&gt;{n}</font>就可以</li>
+<li>如果匹配n~m个字符，可以使用<font color="red">{n,m}</font></li>
+<li>修饰符<font color="red">{n,}</font>表示至少匹配n个字符</li>
 </ul>
 </blockquote>
 <p>参考链接：<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/1252599548343744/1304066080636961">正则表达式</a></p>

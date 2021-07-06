@@ -79,10 +79,9 @@
         <p>今天发现一个特棒的hexo主题<a target="_blank" rel="noopener" href="http://efe.baidu.com/">百度EFE</a>，想着换一下主题，在Github的上下载了这个主题，把主题放到我的项目里，修改了图片，文字等，折腾了老半天，终于好了，可以在本地运行，就推送的服务器上，于是问题出现了。</p>
 <p>刷新页面后显示空白，也没有报任何错误，Travis CI也正常运行，不明所以。</p>
 <hr>
-<p><strong>解决方案</strong></p>
-<p>1.因为没有报任何错误，所以只能先百度看看，结果如下：好像是<em>db.json</em>问题，需要先<code>hexo clean</code>;</p>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>1.因为没有报任何错误，所以只能先百度看看，结果如下：好像是<code>db.json</code>问题，需要先<code>hexo clean</code>;</p>
 <p><code>hexo server</code>然后再提交，很遗憾没用。</p>
-<p>2.<em>index.html</em>文件0字节，所以网页空白</p>
+<p>2.<code>index.html</code>文件0字节，所以网页空白</p>
 <p>3.结合以上信息，意外发现本地项目里的efe主题并没有全部上传到服务器上，只上传了我添加的头像图片。问题解决了，所以写项目一定不要忘了<code>git add</code></p>
 
     
@@ -95,8 +94,6 @@
     
     <a href="/2021/07/05/regex/" class="article-prev">前一篇: regex</a>
     
-    
-    <a href="/2021/07/01/hello-world/" class="article-next">后一篇: Hello World</a>
     
 </nav>
 
