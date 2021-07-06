@@ -29,7 +29,7 @@ tags: 计算机基础
 > 在规则<font color="red">(\d+)</font>后面加<font color="red">?</font>即可表示非贪婪匹配
 
 反向引用
->*如果我们要把搜索到的指定字符串按规则替换，比如前后各加一个<font color="red">xxxx</font>
+>* 如果我们要把搜索到的指定字符串按规则替换，比如前后各加一个<font color="red">xxxx</font>
  
 ```java
 public class Main{
@@ -48,7 +48,7 @@ the quick brown fox jumps <b>over</b> the <b>lazy</b> dog.
 它实际上把任何4字符单词的前后用<font color="red">xxxx</font>括起来
 
 模板引擎
->*模板引擎是指，定义一个字符串作为模板：
+>* 模板引擎是指，定义一个字符串作为模板：
 
  ```html
 Hello,${name}! You are learning ${lang}!
