@@ -45,7 +45,7 @@
     <dl class="tags">
         <dt>标签</dt>
         
-            <dd><a href="/tags/计算机基础/">计算机基础</a> <small>(3)</small></dd>
+            <dd><a href="/tags/计算机基础/">计算机基础</a> <small>(4)</small></dd>
         
             <dd><a href="/tags/Bug/">Bug</a> <small>(1)</small></dd>
         
@@ -60,6 +60,95 @@
 
 <a class="rss" title="RSS Feed" href="/atom.xml"><i class="fa fa-rss-square"></i></a>
 <main>
+
+    <article class="article-index">
+    
+        <h2><a href="/2021/07/06/What-is-JWT/">什么是JWT</a></h2>
+    
+
+    <div class="article-meta">
+        
+
+        <time datetime="2021-07-06T08:28:51.000Z" itemprop="datePublished"><i class="fa fa-clock-o"></i> 2021-07-06</time>
+
+        
+    
+    <span class="article-tags"><i class="fa fa-tag"></i> <a href="/tags/计算机基础/">计算机基础</a></span>
+
+
+    </div>
+
+    
+        <h1 id="什么是JWT"><a href="#什么是JWT" class="headerlink" title="什么是JWT"></a>什么是JWT</h1><blockquote>
+<p>JWT(Json web token)，用为了在网络应用环境间传递声明而执行的一种基于JSON的开放标准。特别适用于分布式站点的单点登录场景。<br>JWT的声明一般被用来在用户和服务器之间传递被认证的用户身份信息，也可以增加一些额外的其他业务逻辑所必的声明信息。<br>该token也可直接被用于认证，也可被加密</p>
+</blockquote>
+<h1 id="为什么要用JWT"><a href="#为什么要用JWT" class="headerlink" title="为什么要用JWT"></a>为什么要用JWT</h1><ul>
+<li>基于Session的认证难以扩展</li>
+<li>基于Session认证的记录被保存在服务器中，随着认证用户的增多，服务端的开销会明显增大</li>
+<li>基于Cookie的认证容易受到CSRF攻击<h1 id="如何使用JWT"><a href="#如何使用JWT" class="headerlink" title="如何使用JWT"></a>如何使用JWT</h1>基于Token的鉴权机制类似于http协议，也是无状态的，它不需要在服务器去保留用户的认证信息或会话信息。<blockquote>
+<h2 id="流程是这样的"><a href="#流程是这样的" class="headerlink" title="流程是这样的"></a>流程是这样的</h2><ul>
+<li>用户使用用户名、密码来请求服务器</li>
+<li>服务器验证用户信息</li>
+<li>服务器通过验证发送给用户一个token</li>
+<li>客户端存储token，每次请求时附带token</li>
+<li>服务器验证token的值，并返回数据</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>Tips:token的加密方式使验证不需要像上篇介绍的防范web攻击而每次请求最好带上随机字符</p>
+</blockquote>
+<h1 id="JWT长什么样"><a href="#JWT长什么样" class="headerlink" title="JWT长什么样"></a>JWT长什么样</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ</span><br></pre></td></tr></table></figure>
+<p>JWT是由三段信息构成的，用<font color="red">.</font>连接。</p>
+<h2 id="header"><a href="#header" class="headerlink" title="header"></a>header</h2><p>包含两部分信息：</p>
+<ul>
+<li>声明类型，这里是jwt</li>
+<li>声明加密的算法<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &#x27;typ&#x27;: &#x27;JWT&#x27;,</span><br><span class="line">  &#x27;alg&#x27;: &#x27;HS256&#x27;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+然后将头部进行base64加密（该加密是可以对称解密的），构成了第一部分<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9</span><br></pre></td></tr></table></figure>
+<h2 id="payload"><a href="#payload" class="headerlink" title="payload"></a>payload</h2>载荷就是存放有效信息的地方，包含三个部分：</li>
+<li>标准中注册的声明</li>
+<li>公开的声明</li>
+<li>私有的声明</li>
+</ul>
+<p>标准中注册的声明（建议但不强制使用）</p>
+<ul>
+<li>iss:jwt签发者</li>
+<li>sub:jwt所面向的用户</li>
+<li>aud:接收jwt的一方</li>
+<li>exp:jwt的过期时间，这个过期时间必须大于签发时间</li>
+<li>nbf:定义在什么时间之前，该jwt都是不可用的</li>
+<li>iat:jwt的签发时间</li>
+<li>jti:jwt的唯一身份标识，主要用来作为一次性的token，从而回避重放攻击</li>
+</ul>
+<p>公有的声明：<br>可以添加任何信息一般添加用户的相关信息或其他业务需要的必要信息，但不建议添加敏感信息，因为该部分在客户端可解密</p>
+<p>私有的声明：<br>是提供者和消费真所共同定义的声明，一般不建议存放敏感信息，因为base64是对称解密的，意味着该部分信息可以归为类明文信息</p>
+<p>定义一个payload:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;sub&quot;: &quot;1234567890&quot;,</span><br><span class="line">  &quot;name&quot;: &quot;John Doe&quot;,</span><br><span class="line">  &quot;admin&quot;: true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后将其进行base64加密，得到jwt的第二部分</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9</span><br></pre></td></tr></table></figure>
+
+<h2 id="signature"><a href="#signature" class="headerlink" title="signature"></a>signature</h2><p>jwt的第三部分是一个签证信息，这个签证信息由三部分组成：</p>
+<ul>
+<li>header(base64后的)</li>
+<li>payload(base64后的)</li>
+<li>secret<br>这个部分需要base64加密后的header和base64加密后的payload，使用<font color="red">.</font>连接组成字符串，然后通过header中声明的加密方式进行加盐secret组合加密，就构成了jwt的第三部分</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// javascript</span><br><span class="line">var encodedString = base64UrlEncode(header) + &#x27;.&#x27; + base64UrlEncode(payload);</span><br><span class="line"></span><br><span class="line">var signature = HMACSHA256(encodedString, &#x27;secret&#x27;); // TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ</span><br></pre></td></tr></table></figure>
+<p>最终可连接为最终的jwt</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Tips:secret是在服务器端的，jwt的签发生成也是在服务器端，secret是服务器端的私钥，用于进行jwt的签发和验证，所以任何场景都不应该把secret泄露出去</p>
+</blockquote>
+<p>#应用<br>一般在请求头里加入Authorization，并加上Bearer标注：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fetch(&#x27;api/user/1&#x27;, &#123;</span><br><span class="line">  headers: &#123;</span><br><span class="line">    &#x27;Authorization&#x27;: &#x27;Bearer &#x27; + token</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>转载自：<br>1.<img src="https://www.jianshu.com/p/576dbf44b2ae" alt="什么是JWT"></p>
+
+    
+</article>
+
+
 
     <article class="article-index">
     
