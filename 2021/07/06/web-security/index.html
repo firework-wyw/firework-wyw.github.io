@@ -13,7 +13,7 @@
           content="ecomfe">
     
     
-    <title>Hexo</title>
+    <title>关于网站安全的若干事项 | Hexo</title>
     
 
     
@@ -58,12 +58,9 @@
 
 </aside>
 
-<a class="rss" title="RSS Feed" href="/atom.xml"><i class="fa fa-rss-square"></i></a>
-<main>
-
-    <article class="article-index">
+<article>
     
-        <h2><a href="/2021/07/06/web-security/">关于网站安全的若干事项</a></h2>
+        <h1>关于网站安全的若干事项</h1>
     
 
     <div class="article-meta">
@@ -138,61 +135,35 @@
     
 </article>
 
-
-
-    <article class="article-index">
+<div class="article-license">
+    <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by/4.0/"><img alt="知识共享许可协议" src="/img/cc-by.png" width="80" height="15"></a>
+</div>
+<nav class="article-pagination">
     
-        <h2><a href="/2021/07/05/regex/">regex</a></h2>
     
-
-    <div class="article-meta">
-        
-
-        <time datetime="2021-07-05T05:04:05.000Z" itemprop="datePublished"><i class="fa fa-clock-o"></i> 2021-07-05</time>
-
-        
+    <a href="/2021/07/05/regex2/" class="article-next">后一篇: 复杂匹配规则</a>
     
-    <span class="article-tags"><i class="fa fa-tag"></i> <a href="/tags/计算机基础/">计算机基础</a></span>
+</nav>
 
+<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"32"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
 
-    </div>
-
-    
-        <h1 id="什么是正则表达式？"><a href="#什么是正则表达式？" class="headerlink" title="什么是正则表达式？"></a>什么是正则表达式？</h1><blockquote>
-<p>正则表达式大概类似于输出语句中的占位符</p>
-</blockquote>
-<h1 id="匹配规则"><a href="#匹配规则" class="headerlink" title="匹配规则"></a>匹配规则</h1><blockquote>
-<ul>
-<li>正则表达式的匹配规则是从左到右按规则匹配，如果表达式中有特殊字符，就用<font color="red">\</font>转义，例如，正则表达式<font color="red">a\&amp;c</font>,其中<font color="red">\&amp;</font>是用来匹配特殊字符<font color="red">&amp;</font>的</li>
-<li>正则表达式在java代码中也是一个字符串，所以，对于正则表达式<font color="red">a\&amp;c</font>来说，对应的java字符串是<font color="red">a\\&amp;c</font>，因为<font color="red">\</font>也是java字符串的转义字符，两个<font color="red">\</font>实际表示的是一个<font color="red">\</font></li>
-</ul>
-</blockquote>
-<hr>
-<blockquote>
-<ul>
-<li>匹配任意字符，例如正则表达式<font color="red">a.c</font>中间的<font color="red">.</font>可以匹配一个任意字符</li>
-<li>匹配数字，如果想匹配<font color="red">0~9</font>这样的数字，可以用<font color="red">\d</font>匹配</li>
-<li>匹配常用字符，用<font color="red">\w</font>可以匹配一个字母、数字或下划线，<font color="red">w</font>的意思是<font color="red">word</font></li>
-<li>匹配空格字符，用<font color="red">\s</font>可以匹配一个空格字符，注意空格字符不但包括空格<code> </code>，还包括<font color="red">tab</font>字符（在java中用<font color="red">\t</font>表示）</li>
-<li>匹配非数字，用<font color="red">\D</font>匹配非数字，于<font color="red">\d</font>刚好相反，类似的<font color="red">\W</font>可以匹配<font color="red">\w</font>不能匹配的字符，<font coloe="red">\S</font>匹配<font color="red">\s</font>不能匹配的字符</li>
-<li>重复匹配，修饰符<font color="red">*</font>可以匹配任意个字符，包括0个字符</li>
-<li>修饰符<font color="red">+</font> 可以匹配至少一个字符</li>
-<li>修饰符<font color="red">?</font>可以匹配0个或一个字符</li>
-<li>匹配n个字符，用&lt;font color=”red’&gt;{n}</font>就可以</li>
-<li>如果匹配n~m个字符，可以使用<font color="red">{n,m}</font></li>
-<li>修饰符<font color="red">{n,}</font>表示至少匹配n个字符</li>
-</ul>
-</blockquote>
-<p>参考链接：<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/1252599548343744/1304066080636961">正则表达式</a></p>
-
-    
-</article>
+<div class="ds-thread" data-thread-key="2021/07/06/web-security/" data-title="关于网站安全的若干事项" data-url="https://firework-wyw.github.io/2021/07/06/web-security/"></div>
+<script>
+var duoshuoQuery = {short_name:"baidu-efe"};
+(function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';
+    ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
 
 
 
-
-
-</main>
 
 <footer>
     <p class="copy">&copy;Designed by <a href="http://efe.baidu.com"target="_blank" title="EFE"> EFE </a> | Powered By <a href="http://hexo.io/"

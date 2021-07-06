@@ -45,7 +45,7 @@
     <dl class="tags">
         <dt>标签</dt>
         
-            <dd><a href="/tags/计算机基础/">计算机基础</a> <small>(2)</small></dd>
+            <dd><a href="/tags/计算机基础/">计算机基础</a> <small>(3)</small></dd>
         
             <dd><a href="/tags/Bug/">Bug</a> <small>(1)</small></dd>
         
@@ -60,6 +60,85 @@
 
 <a class="rss" title="RSS Feed" href="/atom.xml"><i class="fa fa-rss-square"></i></a>
 <main>
+
+    <article class="article-index">
+    
+        <h2><a href="/2021/07/06/web-security/">关于网站安全的若干事项</a></h2>
+    
+
+    <div class="article-meta">
+        
+
+        <time datetime="2021-07-06T05:45:43.000Z" itemprop="datePublished"><i class="fa fa-clock-o"></i> 2021-07-06</time>
+
+        
+    
+    <span class="article-tags"><i class="fa fa-tag"></i> <a href="/tags/计算机基础/">计算机基础</a></span>
+
+
+    </div>
+
+    
+        <h1 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h1><blockquote>
+<p>以下内容为个人学习总结，不保证完全信息严谨可靠</p>
+</blockquote>
+<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><blockquote>
+<p>由于Http协议是无状态协议，也就是说当用户通过浏览器像服务器发送请求时，服务器无法判断用户身份，所以为了确定请求的合法性，浏览器请求时必须提交额外的数据，比如cookie等</p>
+</blockquote>
+<h1 id="产生的问题"><a href="#产生的问题" class="headerlink" title="产生的问题"></a>产生的问题</h1><blockquote>
+<p>为了窃取用户数据就产生了各种各样的非法请求，总的来说分为两类：</p>
+<ul>
+<li>1.合法用户（受害者）提交非法请求（XSS跨站脚本攻击，点击劫持/UI覆盖攻击）</li>
+<li>2.非法用户提交合法请求（CSRF跨站请求伪造）<h2 id="XSS跨站脚本攻击"><a href="#XSS跨站脚本攻击" class="headerlink" title="XSS跨站脚本攻击"></a>XSS跨站脚本攻击</h2><blockquote>
+<h3 id="名称"><a href="#名称" class="headerlink" title="名称"></a>名称</h3><p>跨站脚本攻击（Cross Site Scripting），为了不和层叠样式表（Cascading Style Sheets,CSS）的缩写混淆，故将跨站脚本攻击缩写为XSS。</p>
+<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><ul>
+<li>ReflectedXSS（基于反射的XSS攻击）</li>
+<li>StoredXSS（基于存储的XSS攻击）</li>
+<li>DOM-bases or local XSS（基于DOM或本地的XSS攻击）<h3 id="概括"><a href="#概括" class="headerlink" title="概括"></a>概括</h3>XSS攻击的本质：利用一切手段在目标用户的浏览器中执行攻击脚本</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h2 id="CSRF攻击"><a href="#CSRF攻击" class="headerlink" title="CSRF攻击"></a>CSRF攻击</h2><blockquote>
+<h3 id="名称-1"><a href="#名称-1" class="headerlink" title="名称"></a>名称</h3><p>CSRF(Cross-site request forgery)，跨站请求伪造，也被称为one cliclk attack/session riding，缩写为：CSRF/XSRF</p>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>攻击者盗用用户身份，以合法名义发送请求。</p>
+<h3 id="示意图"><a href="#示意图" class="headerlink" title="示意图"></a>示意图</h3><p><img src="https://pic002.cnblogs.com/img/hyddd/200904/2009040916453171.jpg" alt="CSRF攻击思想" title="CSRF攻击思想"><br>从上图可以看出，完成一次CSRF攻击，受害者必须依次完成两个步骤：</p>
+<ul>
+<li>1.登录受信任的网站A，并在本地生成Cookie</li>
+<li>2.在不登出A的情况下，访问危险网站B</li>
+</ul>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>Csrf攻击是源于WEB的隐式身份验证机制，WEB的身份验证机制虽然可以保证一个请求来自某个用户的浏览器，但却无法保证该请求是用户批准发送的。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<h3 id="CSRF的防御"><a href="#CSRF的防御" class="headerlink" title="CSRF的防御"></a>CSRF的防御</h3><p>主要从服务端和客户端两方面着手，从防御效果来看，服务端防御比较好</p>
+<h4 id="服务端CSRF防御"><a href="#服务端CSRF防御" class="headerlink" title="服务端CSRF防御"></a>服务端CSRF防御</h4><p>服务端的CSRF方式总的思想就是在客户端页面增加<font color="red">伪随机数</font></p>
+<ul>
+<li>Cookie Hashing（所有表单都包含同一个伪随机值）<ul>
+<li>在表单里增加Hash值，以认证是用户发送的请求</li>
+<li>然后在服务器端进行Hash值验证</li>
+</ul>
+</li>
+<li>验证码<ul>
+<li>每次用户提交都需要在表单中填写一个图片上的随机字符串，这个完全可以解决CSRF</li>
+</ul>
+</li>
+<li>One-Time Tokens（不同的表单包含不同的伪随机值）</li>
+</ul>
+</blockquote>
+</blockquote>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p>1.<a target="_blank" rel="noopener" href="http://blog.nsfocus.net/offensive-defensive-stances-web-security/">关于web安全的三个攻防姿势</a></p>
+<p>2.<a target="_blank" rel="noopener" href="https://www.cnblogs.com/hyddd/archive/2009/04/09/1432744.html">浅谈CSRF攻击方式</a></p>
+
+    
+</article>
+
+
 
     <article class="article-index">
     
