@@ -106,4 +106,4 @@ fetch('api/user/1', {
 ```
 
 转载自：
-1.![什么是JWT](https://www.jianshu.com/p/576dbf44b2ae)
+1.[什么是JWT](https://www.jianshu.com/p/576dbf44b2ae)
