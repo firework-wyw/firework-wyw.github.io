@@ -47,7 +47,7 @@
         
             <dd><a href="/tags/计算机基础/">计算机基础</a> <small>(5)</small></dd>
         
-            <dd><a href="/tags/Bug/">Bug</a> <small>(1)</small></dd>
+            <dd><a href="/tags/Bug/">Bug</a> <small>(2)</small></dd>
         
     </dl>
 
@@ -60,6 +60,35 @@
 
 <a class="rss" title="RSS Feed" href="/atom.xml"><i class="fa fa-rss-square"></i></a>
 <main>
+
+    <article class="article-index">
+    
+        <h2><a href="/2021/07/08/swagger-bug/">swagger-bug</a></h2>
+    
+
+    <div class="article-meta">
+        
+
+        <time datetime="2021-07-08T02:46:38.000Z" itemprop="datePublished"><i class="fa fa-clock-o"></i> 2021-07-08</time>
+
+        
+    
+    <span class="article-tags"><i class="fa fa-tag"></i> <a href="/tags/Bug/">Bug</a></span>
+
+
+    </div>
+
+    
+        <h1 id="Swagger出现404错误"><a href="#Swagger出现404错误" class="headerlink" title="Swagger出现404错误"></a>Swagger出现404错误</h1><p>开始学习使用Swagger，然而发现按照教程的步骤写的实例项目有时候可以正常实现功能，有时候却不可以，问题到底出现在什么地方呢？</p>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><blockquote>
+<p>仔细比对了可以正常运行和不能正常运行的项目，发现唯一的区别就是<code>pom.xml</code>中的依赖版本不同，一个是<code>2.x</code>版本，一个是<code>3.0.0</code>，改成<code>2.x</code>后正常运行。<br>网上搜索了以下swagger3与之前的swagger2使用的方法并不相同，连API的访问路径也不相同，而我看的教程是<code>2.x</code>版的，使用的是<code>3.x</code>，学习教程要注意版本号，新版本的使用要以官方介绍为准。</p>
+</blockquote>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p>1.<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_15973399/article/details/107436089">升级使用SpringFox的swagger-ui 3.0.0版本</a><br>2.<a target="_blank" rel="noopener" href="https://mrbird.cc/Spring-Boot-Swagger2-RESTful-API.html">Spring Boot整合Swagger2构建RESTful API</a></p>
+
+    
+</article>
+
+
 
     <article class="article-index">
     
