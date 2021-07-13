@@ -13,7 +13,7 @@
           content="ecomfe">
     
     
-    <title>swagger-bug | Hexo</title>
+    <title>修改为next主题的bug | Hexo</title>
     
 
     
@@ -60,13 +60,13 @@
 
 <article>
     
-        <h1>swagger-bug</h1>
+        <h1>修改为next主题的bug</h1>
     
 
     <div class="article-meta">
         
 
-        <time datetime="2021-07-08T02:46:38.000Z" itemprop="datePublished"><i class="fa fa-clock-o"></i> 2021-07-08</time>
+        <time datetime="2021-07-13T02:08:47.000Z" itemprop="datePublished"><i class="fa fa-clock-o"></i> 2021-07-13</time>
 
         
     
@@ -76,11 +76,25 @@
     </div>
 
     
-        <h1 id="Swagger出现404错误"><a href="#Swagger出现404错误" class="headerlink" title="Swagger出现404错误"></a>Swagger出现404错误</h1><p>开始学习使用Swagger，然而发现按照教程的步骤写的实例项目有时候可以正常实现功能，有时候却不可以，问题到底出现在什么地方呢？</p>
-<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><blockquote>
-<p>仔细比对了可以正常运行和不能正常运行的项目，发现唯一的区别就是<code>pom.xml</code>中的依赖版本不同，一个是<code>2.x</code>版本，一个是<code>3.0.0</code>，改成<code>2.x</code>后正常运行。<br>网上搜索了以下swagger3与之前的swagger2使用的方法并不相同，连API的访问路径也不相同，而我看的教程是<code>2.x</code>版的，使用的是<code>3.x</code>，学习教程要注意版本号，新版本的使用要以官方介绍为准。</p>
+        <h1 id="问题出现"><a href="#问题出现" class="headerlink" title="问题出现"></a>问题出现</h1><p>为了给网站添加搜索功能，网上教程只需要3步：</p>
+<blockquote>
+<p>1.安装插件</p>
 </blockquote>
-<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p>1.<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_15973399/article/details/107436089">升级使用SpringFox的swagger-ui 3.0.0版本</a><br>2.<a target="_blank" rel="noopener" href="https://mrbird.cc/Spring-Boot-Swagger2-RESTful-API.html">Spring Boot整合Swagger2构建RESTful API</a></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>2.修改站点配置文件</p>
+</blockquote>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">    <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">    <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">    <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">    <span class="attr">limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>3.修改主题配置文件</p>
+</blockquote>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><blockquote>
+<p>由于是需要支持搜索的主题才能启用搜索，所以原先的百度efe主题只能弃用，Clone<code>nexo</code>主题。<br>配置好后，运行</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp; hexo g &amp; s</span><br></pre></td></tr></table></figure>
+<p>点击搜索后一直在载入，网上说可能资源文件被浏览器插件拦截了或第一次加载比较慢，然而本地看了一下，都不是也不能解决问题。<br>发现控制器里提示<code>search.html 404</code>，查看配置文件发现<code>path: search.xml</code>错写成了<code>path: search.html</code>，由此问题解决</p>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p>1.<a target="_blank" rel="noopener" href="https://blog.csdn.net/ganzhilin520/article/details/79047983">hexo 搜索功能</a></p>
 
     
 </article>
@@ -90,17 +104,15 @@
 </div>
 <nav class="article-pagination">
     
-    <a href="/2021/07/13/next-bug/" class="article-prev">前一篇: 修改为next主题的bug</a>
     
-    
-    <a href="/2021/07/07/rbac/" class="article-next">后一篇: RBAC权限介绍</a>
+    <a href="/2021/07/08/swagger-bug/" class="article-next">后一篇: swagger-bug</a>
     
 </nav>
 
 <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a></div>
 <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"32"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
 
-<div class="ds-thread" data-thread-key="2021/07/08/swagger-bug/" data-title="swagger-bug" data-url="https://firework-wyw.github.io/2021/07/08/swagger-bug/"></div>
+<div class="ds-thread" data-thread-key="2021/07/13/next-bug/" data-title="修改为next主题的bug" data-url="https://firework-wyw.github.io/2021/07/13/next-bug/"></div>
 <script>
 var duoshuoQuery = {short_name:"baidu-efe"};
 (function() {

@@ -47,7 +47,7 @@
         
             <dd><a href="/tags/计算机基础/">计算机基础</a> <small>(5)</small></dd>
         
-            <dd><a href="/tags/Bug/">Bug</a> <small>(2)</small></dd>
+            <dd><a href="/tags/Bug/">Bug</a> <small>(3)</small></dd>
         
     </dl>
 
@@ -60,6 +60,49 @@
 
 <a class="rss" title="RSS Feed" href="/atom.xml"><i class="fa fa-rss-square"></i></a>
 <main>
+
+    <article class="article-index">
+    
+        <h2><a href="/2021/07/13/next-bug/">修改为next主题的bug</a></h2>
+    
+
+    <div class="article-meta">
+        
+
+        <time datetime="2021-07-13T02:08:47.000Z" itemprop="datePublished"><i class="fa fa-clock-o"></i> 2021-07-13</time>
+
+        
+    
+    <span class="article-tags"><i class="fa fa-tag"></i> <a href="/tags/Bug/">Bug</a></span>
+
+
+    </div>
+
+    
+        <h1 id="问题出现"><a href="#问题出现" class="headerlink" title="问题出现"></a>问题出现</h1><p>为了给网站添加搜索功能，网上教程只需要3步：</p>
+<blockquote>
+<p>1.安装插件</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>2.修改站点配置文件</p>
+</blockquote>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">    <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">    <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">    <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">    <span class="attr">limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>3.修改主题配置文件</p>
+</blockquote>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><blockquote>
+<p>由于是需要支持搜索的主题才能启用搜索，所以原先的百度efe主题只能弃用，Clone<code>nexo</code>主题。<br>配置好后，运行</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp; hexo g &amp; s</span><br></pre></td></tr></table></figure>
+<p>点击搜索后一直在载入，网上说可能资源文件被浏览器插件拦截了或第一次加载比较慢，然而本地看了一下，都不是也不能解决问题。<br>发现控制器里提示<code>search.html 404</code>，查看配置文件发现<code>path: search.xml</code>错写成了<code>path: search.html</code>，由此问题解决</p>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p>1.<a target="_blank" rel="noopener" href="https://blog.csdn.net/ganzhilin520/article/details/79047983">hexo 搜索功能</a></p>
+
+    
+</article>
+
+
 
     <article class="article-index">
     
