@@ -23,7 +23,7 @@ local_search:
   enable: true
 ```
 # 解决方案
-> 由于是需要支持搜索的主题才能启用搜索，所以原先的百度efe主题只能弃用，Clone`nexo`主题。
+> 由于是需要支持搜索的主题才能启用搜索，所以原先的百度efe主题只能弃用，Clone`next`主题。
 > 配置好后，运行
 ```html
 hexo clean & hexo g & s
