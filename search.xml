@@ -391,6 +391,8 @@
 </blockquote>
 <h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p>1.<a href="https://imsun.net/posts/gitment-introduction/">Gitment：使用 GitHub Issues 搭建评论系统 </a></p>
 <div id="container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
 ]]></content>
       <tags>
         <tag>Gitment</tag>
