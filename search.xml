@@ -393,4 +393,32 @@ gitment.render('container')
         <tag>计算机基础</tag>
       </tags>
   </entry>
+  <entry>
+    <title>添加gitment</title>
+    <url>/2021/07/13/gitment/</url>
+    <content><![CDATA[<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><blockquote>
+<p>Gitment不显示在界面上的问题，而且还有隐私泄露的风险</p>
+</blockquote>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><blockquote>
+<p>在<code>xx.md</code>页面可直接嵌入<code>HTML</code>代码</p>
+</blockquote>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p>1.<a href="https://imsun.net/posts/gitment-introduction/">Gitment：使用 GitHub Issues 搭建评论系统 </a></p>
+<div id="container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: 'firework-wyw',
+  repo: 'git_comment',
+  oauth: {
+    client_id: '8a085244b132bd131808',
+    client_secret: 'bd7d2304a4d0056f0fab6265176b50614343bdd8',
+  },
+});
+gitment.render('container')
+</script>]]></content>
+      <tags>
+        <tag>Gitment</tag>
+      </tags>
+  </entry>
 </search>
