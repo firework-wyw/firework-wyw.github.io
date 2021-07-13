@@ -98,9 +98,25 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 #theme: landscape
-theme: efe
+theme: next-7.8.0
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+
+# 搜索
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
+
+# Gitment
+gitment:
+  enable: true
+  gitment_owner: 'firework-wyw'
+  gitment_repo: 'git_comment'
+  gitment_oauth:
+    client_id: '8a085244b132bd131808'
+    client_secret: 'bd7d2304a4d0056f0fab6265176b50614343bdd8'
