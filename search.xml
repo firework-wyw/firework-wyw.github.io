@@ -108,7 +108,7 @@
 </blockquote>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 <h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><blockquote>
-<p>由于是需要支持搜索的主题才能启用搜索，所以原先的百度efe主题只能弃用，Clone<code>nexo</code>主题。<br>配置好后，运行</p>
+<p>由于是需要支持搜索的主题才能启用搜索，所以原先的百度efe主题只能弃用，Clone<code>next</code>主题。<br>配置好后，运行</p>
 </blockquote>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line">hexo clean &amp; hexo g &amp; s</span><br></pre></td></tr></table></figure>
 <p>点击搜索后一直在载入，网上说可能资源文件被浏览器插件拦截了或第一次加载比较慢，然而本地看了一下，都不是也不能解决问题。<br>发现控制器里提示<code>search.html 404</code>，查看配置文件发现<code>path: search.xml</code>错写成了<code>path: search.html</code>，由此问题解决</p>
