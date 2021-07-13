@@ -22,6 +22,6 @@ var gitment = new Gitment({
     client_id: '8a085244b132bd131808',
     client_secret: 'bd7d2304a4d0056f0fab6265176b50614343bdd8',
   },
-})
+});
 gitment.render('container')
 </script>
