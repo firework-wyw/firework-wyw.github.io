@@ -387,7 +387,7 @@
 <p>Gitment不显示在界面上的问题，只要项目公开就一定有隐私泄露的风险</p>
 </blockquote>
 <h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><blockquote>
-<p>在<code>xx.md</code>页面可直接嵌入<code>HTML</code>代码</p>
+<p>在<code>xx.md</code>页面可直接嵌入<code>HTML</code>代码，好像答非所问233</p>
 </blockquote>
 <h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p>1.<a href="https://imsun.net/posts/gitment-introduction/">Gitment：使用 GitHub Issues 搭建评论系统 </a></p>
 <div id="container"></div>
