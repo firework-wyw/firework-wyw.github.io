@@ -14,3 +14,14 @@ tags: Gitment
 <div id="container"></div>
 <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
 <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: 'firework',
+  repo: 'git_comment',
+  oauth: {
+    client_id: '8a085244b132bd131808',
+    client_secret: 'bd7d2304a4d0056f0fab6265176b50614343bdd8',
+  },
+})
+gitment.render('container')
+</script>
