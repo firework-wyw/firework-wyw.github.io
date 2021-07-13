@@ -998,9 +998,3 @@ css: css
 js: js
 images: images
 
-# Gitment
-gitment_owner: 'firework-wyw'       #你的 GitHub ID
-gitment_repo: 'git_comment'          #存储评论的 repo
-gitment_oauth:
-  client_id: '8a085244b132bd131808'           #client ID
-  client_secret: 'bd7d2304a4d0056f0fab6265176b50614343bdd8'

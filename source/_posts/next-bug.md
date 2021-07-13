@@ -31,5 +31,22 @@ hexo clean & hexo g & s
 点击搜索后一直在载入，网上说可能资源文件被浏览器插件拦截了或第一次加载比较慢，然而本地看了一下，都不是也不能解决问题。
 发现控制器里提示`search.html 404`，查看配置文件发现`path: search.xml`错写成了`path: search.html`，由此问题解决
 
+
+
+<div id="container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: 'firework-wyw',
+  repo: 'git_comment',
+  oauth: {
+    client_id: '8a085244b132bd131808',
+    client_secret: 'bd7d2304a4d0056f0fab6265176b50614343bdd8',
+  },
+});
+gitment.render('container')
+</script>
+
 # 参考链接
 1.[hexo 搜索功能](https://blog.csdn.net/ganzhilin520/article/details/79047983)
