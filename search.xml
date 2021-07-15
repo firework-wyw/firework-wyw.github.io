@@ -408,4 +408,49 @@ gitment.render('container')
         <tag>Gitment</tag>
       </tags>
   </entry>
+  <entry>
+    <title></title>
+    <url>/2021/07/15/attention-bug/</url>
+    <content><![CDATA[<h1 id="应该注意的语法问题"><a href="#应该注意的语法问题" class="headerlink" title="应该注意的语法问题"></a>应该注意的语法问题</h1><p>问题1：</p>
+<blockquote>
+<p>jpa映射错误</p>
+</blockquote>
+<p>解决方案：</p>
+<blockquote>
+<p>类中关联表属性写错</p>
+</blockquote>
+<p>问题2：</p>
+<blockquote>
+<p>程序获取到的值为空</p>
+</blockquote>
+<p>解决方案：</p>
+<blockquote>
+<p>获取不到相关属性时，首先考虑是否传值成功，然而这里的问题在于属性的载体类本身就有问题，就算参数正确，也获取不到值，需要考虑是不是类中属性名称写错，private、static等写错，或者类中的注解不正确。</p>
+</blockquote>
+]]></content>
+  </entry>
+  <entry>
+    <title>Spring Bean 的三种定义方式</title>
+    <url>/2021/07/14/spring-bean/</url>
+    <content><![CDATA[<h1 id="基于XML的配置"><a href="#基于XML的配置" class="headerlink" title="基于XML的配置"></a>基于XML的配置</h1><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">beans</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">import</span> <span class="attr">resource</span>=<span class="string">&quot;resource.xml&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;userService&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.example.***.UserService&quot;</span> <span class="attr">init-method</span>=<span class="string">&quot;init&quot;</span> <span class="attr">destory-method</span>=<span class="string">&quot;destory&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;message&quot;</span> <span class="attr">class</span>=<span class="string">&quot;java.lang.String&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">constructctor-arg</span> <span class="attr">index</span>=<span class="string">&quot;0&quot;</span> <span class="attr">value</span>=<span class="string">&quot;test&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">constructctor-arg</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="基于注解的配置"><a href="#基于注解的配置" class="headerlink" title="基于注解的配置"></a>基于注解的配置</h1><p>1.使用注解声明Bean</p>
+<blockquote>
+<p>Spring提供了四个注解，这些注解与xml定义Bean的效果一致，将组件交给Spring容器管理。组件的名称默认是类名（首字母变小写），可自定义</p>
+<ul>
+<li>@Component</li>
+<li>@Controller</li>
+<li>@Service</li>
+<li>@Repository</li>
+</ul>
+<p>2.配置扫描包的路径</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">bean-package</span>=<span class="string">&quot;com.example.spring&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">context:include-filter</span> <span class="attr">type</span>=<span class="string">&quot;regex&quot;</span> <span class="attr">expression</span>=<span class="string">&quot;com.example.spring.*&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">context:include-filter</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">context:exclude-filter</span> <span class="attr">type</span>=<span class="string">&quot;aspectj&quot;</span> <span class="attr">expression</span>=<span class="string">&quot;com.example.spring&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">context:exclude-filter</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context:component-scan</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="基于JAVA类的配置"><a href="#基于JAVA类的配置" class="headerlink" title="基于JAVA类的配置"></a>基于JAVA类的配置</h1><p>1.使用@Configuration注解<br>2.使用@Bean注解</p>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p>1.<a href="https://www.cnblogs.com/wslook/p/9161560.html">Spring Bean定义的三种方式</a></p>
+]]></content>
+      <tags>
+        <tag>计算机基础</tag>
+      </tags>
+  </entry>
 </search>

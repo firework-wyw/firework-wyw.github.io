@@ -175,6 +175,159 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://firework-wyw.github.io/2021/07/15/attention-bug/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="FireWork">
+      <meta itemprop="description" content="hexo博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/15/attention-bug/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-07-15 08:55:06" itemprop="dateCreated datePublished" datetime="2021-07-15T08:55:06+08:00">2021-07-15</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="应该注意的语法问题"><a href="#应该注意的语法问题" class="headerlink" title="应该注意的语法问题"></a>应该注意的语法问题</h1><p>问题1：</p>
+<blockquote>
+<p>jpa映射错误</p>
+</blockquote>
+<p>解决方案：</p>
+<blockquote>
+<p>类中关联表属性写错</p>
+</blockquote>
+<p>问题2：</p>
+<blockquote>
+<p>程序获取到的值为空</p>
+</blockquote>
+<p>解决方案：</p>
+<blockquote>
+<p>获取不到相关属性时，首先考虑是否传值成功，然而这里的问题在于属性的载体类本身就有问题，就算参数正确，也获取不到值，需要考虑是不是类中属性名称写错，private、static等写错，或者类中的注解不正确。</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://firework-wyw.github.io/2021/07/14/spring-bean/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="FireWork">
+      <meta itemprop="description" content="hexo博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/14/spring-bean/" class="post-title-link" itemprop="url">Spring Bean 的三种定义方式</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-07-14 17:27:57" itemprop="dateCreated datePublished" datetime="2021-07-14T17:27:57+08:00">2021-07-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-07-15 08:55:06" itemprop="dateModified" datetime="2021-07-15T08:55:06+08:00">2021-07-15</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="基于XML的配置"><a href="#基于XML的配置" class="headerlink" title="基于XML的配置"></a>基于XML的配置</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">beans</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">import</span> <span class="attr">resource</span>=<span class="string">&quot;resource.xml&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;userService&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.example.***.UserService&quot;</span> <span class="attr">init-method</span>=<span class="string">&quot;init&quot;</span> <span class="attr">destory-method</span>=<span class="string">&quot;destory&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;message&quot;</span> <span class="attr">class</span>=<span class="string">&quot;java.lang.String&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">constructctor-arg</span> <span class="attr">index</span>=<span class="string">&quot;0&quot;</span> <span class="attr">value</span>=<span class="string">&quot;test&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">constructctor-arg</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="基于注解的配置"><a href="#基于注解的配置" class="headerlink" title="基于注解的配置"></a>基于注解的配置</h1><p>1.使用注解声明Bean</p>
+<blockquote>
+<p>Spring提供了四个注解，这些注解与xml定义Bean的效果一致，将组件交给Spring容器管理。组件的名称默认是类名（首字母变小写），可自定义</p>
+<ul>
+<li>@Component</li>
+<li>@Controller</li>
+<li>@Service</li>
+<li>@Repository</li>
+</ul>
+<p>2.配置扫描包的路径</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">bean-package</span>=<span class="string">&quot;com.example.spring&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">context:include-filter</span> <span class="attr">type</span>=<span class="string">&quot;regex&quot;</span> <span class="attr">expression</span>=<span class="string">&quot;com.example.spring.*&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">context:include-filter</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">context:exclude-filter</span> <span class="attr">type</span>=<span class="string">&quot;aspectj&quot;</span> <span class="attr">expression</span>=<span class="string">&quot;com.example.spring&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">context:exclude-filter</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context:component-scan</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="基于JAVA类的配置"><a href="#基于JAVA类的配置" class="headerlink" title="基于JAVA类的配置"></a>基于JAVA类的配置</h1><p>1.使用@Configuration注解<br>2.使用@Bean注解</p>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p>1.<a target="_blank" rel="noopener" href="https://www.cnblogs.com/wslook/p/9161560.html">Spring Bean定义的三种方式</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://firework-wyw.github.io/2021/07/13/gitment/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -198,10 +351,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-07-13 13:08:13 / 修改时间：13:51:03" itemprop="dateCreated datePublished" datetime="2021-07-13T13:08:13+08:00">2021-07-13</time>
+              <time title="创建时间：2021-07-13 13:08:13" itemprop="dateCreated datePublished" datetime="2021-07-13T13:08:13+08:00">2021-07-13</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-07-15 08:55:06" itemprop="dateModified" datetime="2021-07-15T08:55:06+08:00">2021-07-15</time>
+              </span>
 
           
 
@@ -276,10 +435,16 @@ gitment.render('container')
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-07-13 10:08:47 / 修改时间：13:51:03" itemprop="dateCreated datePublished" datetime="2021-07-13T10:08:47+08:00">2021-07-13</time>
+              <time title="创建时间：2021-07-13 10:08:47" itemprop="dateCreated datePublished" datetime="2021-07-13T10:08:47+08:00">2021-07-13</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-07-15 08:55:06" itemprop="dateModified" datetime="2021-07-15T08:55:06+08:00">2021-07-15</time>
+              </span>
 
           
 
@@ -991,88 +1156,11 @@ gitment.render('container')
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://firework-wyw.github.io/2021/07/02/fix-bug/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="FireWork">
-      <meta itemprop="description" content="hexo博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/02/fix-bug/" class="post-title-link" itemprop="url">与Bug的233</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-07-02 16:57:18" itemprop="dateCreated datePublished" datetime="2021-07-02T16:57:18+08:00">2021-07-02</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-07-06 14:14:06" itemprop="dateModified" datetime="2021-07-06T14:14:06+08:00">2021-07-06</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Bug/" itemprop="url" rel="index"><span itemprop="name">Bug</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>今天发现一个特棒的hexo主题<a target="_blank" rel="noopener" href="http://efe.baidu.com/">百度EFE</a>，想着换一下主题，在Github的上下载了这个主题，把主题放到我的项目里，修改了图片，文字等，折腾了老半天，终于好了，可以在本地运行，就推送的服务器上，于是问题出现了。</p>
-<p>刷新页面后显示空白，也没有报任何错误，Travis CI也正常运行，不明所以。</p>
-<hr>
-<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>1.因为没有报任何错误，所以只能先百度看看，结果如下：好像是<code>db.json</code>问题，需要先<code>hexo clean</code>;</p>
-<p><code>hexo server</code>然后再提交，很遗憾没用。</p>
-<p>2.<code>index.html</code>文件0字节，所以网页空白</p>
-<p>3.结合以上信息，意外发现本地项目里的efe主题并没有全部上传到服务器上，只上传了我添加的头像图片。问题解决了，所以写项目一定不要忘了<code>git add</code></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
 
 
 
@@ -1137,7 +1225,7 @@ gitment.render('container')
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
