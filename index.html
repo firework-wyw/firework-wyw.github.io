@@ -175,7 +175,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://firework-wyw.github.io/2021/07/15/attention-bug/">
+    <link itemprop="mainEntityOfPage" href="https://firework-wyw.github.io/2021/07/19/attention-bug/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -189,7 +189,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/07/15/attention-bug/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/2021/07/19/attention-bug/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta">
@@ -199,7 +199,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-07-15 08:55:06" itemprop="dateCreated datePublished" datetime="2021-07-15T08:55:06+08:00">2021-07-15</time>
+              <time title="创建时间：2021-07-19 12:34:29" itemprop="dateCreated datePublished" datetime="2021-07-19T12:34:29+08:00">2021-07-19</time>
             </span>
 
           
@@ -229,6 +229,81 @@
 <blockquote>
 <p>获取不到相关属性时，首先考虑是否传值成功，然而这里的问题在于属性的载体类本身就有问题，就算参数正确，也获取不到值，需要考虑是不是类中属性名称写错，private、static等写错，或者类中的注解不正确。</p>
 </blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://firework-wyw.github.io/2021/07/19/nosniff/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="FireWork">
+      <meta itemprop="description" content="hexo博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/19/nosniff/" class="post-title-link" itemprop="url">nosniff</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-07-19 12:17:49 / 修改时间：12:34:29" itemprop="dateCreated datePublished" datetime="2021-07-19T12:17:49+08:00">2021-07-19</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><strong>问题</strong></p>
+<blockquote>
+<p>来自“<a target="_blank" rel="noopener" href="http://localhost:8080/login.html%E2%80%9D%E7%9A%84%E8%B5%84%E6%BA%90%E5%B7%B2%E8%A2%AB%E9%98%BB%E6%AD%A2%EF%BC%8C%E5%9B%A0%E4%B8%BA">http://localhost:8080/login.html”的资源已被阻止，因为</a> MIME 类型（“text/html”）不匹配（X-Content-Type-Options: nosniff）</p>
+</blockquote>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><blockquote>
+<p>有网友是这样说的 ：</p>
+<blockquote>
+<p>我想知道该文件是否根本不存在，而 Joomla 会返回默认的 404 响应？</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>然后在浏览器里查看网络资源，果然没有，应该是被Spring Security拦截掉了，然后Spring Security返回的不是网页期待的格式，所有报错。<br>在Spring SecurityConfig中放开css权限就可以了。</p>
+</blockquote>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ol>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/docs/Web/HTTP/Headers/X-Content-Type-Options?utm_source=mozilla&utm_medium=firefox-console-errors&utm_campaign=default">X-Content-Type-Options </a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/gantry/gantry5/issues/2600">自定义文件的位置错误…</a></li>
+</ol>
 
       
     </div>
@@ -279,7 +354,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-07-15 08:55:06" itemprop="dateModified" datetime="2021-07-15T08:55:06+08:00">2021-07-15</time>
+                <time title="修改时间：2021-07-19 12:34:29" itemprop="dateModified" datetime="2021-07-19T12:34:29+08:00">2021-07-19</time>
               </span>
 
           
@@ -359,7 +434,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-07-15 08:55:06" itemprop="dateModified" datetime="2021-07-15T08:55:06+08:00">2021-07-15</time>
+                <time title="修改时间：2021-07-19 12:34:29" itemprop="dateModified" datetime="2021-07-19T12:34:29+08:00">2021-07-19</time>
               </span>
 
           
@@ -443,7 +518,7 @@ gitment.render('container')
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-07-15 08:55:06" itemprop="dateModified" datetime="2021-07-15T08:55:06+08:00">2021-07-15</time>
+                <time title="修改时间：2021-07-19 12:34:29" itemprop="dateModified" datetime="2021-07-19T12:34:29+08:00">2021-07-19</time>
               </span>
 
           
@@ -1057,105 +1132,6 @@ gitment.render('container')
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://firework-wyw.github.io/2021/07/05/regex/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="FireWork">
-      <meta itemprop="description" content="hexo博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/05/regex/" class="post-title-link" itemprop="url">regex</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-07-05 13:04:05" itemprop="dateCreated datePublished" datetime="2021-07-05T13:04:05+08:00">2021-07-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-07-06 14:12:23" itemprop="dateModified" datetime="2021-07-06T14:12:23+08:00">2021-07-06</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">计算机基础</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="什么是正则表达式？"><a href="#什么是正则表达式？" class="headerlink" title="什么是正则表达式？"></a>什么是正则表达式？</h1><blockquote>
-<p>正则表达式大概类似于输出语句中的占位符</p>
-</blockquote>
-<h1 id="匹配规则"><a href="#匹配规则" class="headerlink" title="匹配规则"></a>匹配规则</h1><blockquote>
-<ul>
-<li>正则表达式的匹配规则是从左到右按规则匹配，如果表达式中有特殊字符，就用<font color="red">\</font>转义，例如，正则表达式<font color="red">a\&amp;c</font>,其中<font color="red">\&amp;</font>是用来匹配特殊字符<font color="red">&amp;</font>的</li>
-<li>正则表达式在java代码中也是一个字符串，所以，对于正则表达式<font color="red">a\&amp;c</font>来说，对应的java字符串是<font color="red">a\\&amp;c</font>，因为<font color="red">\</font>也是java字符串的转义字符，两个<font color="red">\</font>实际表示的是一个<font color="red">\</font></li>
-</ul>
-</blockquote>
-<hr>
-<blockquote>
-<ul>
-<li>匹配任意字符，例如正则表达式<font color="red">a.c</font>中间的<font color="red">.</font>可以匹配一个任意字符</li>
-<li>匹配数字，如果想匹配<font color="red">0~9</font>这样的数字，可以用<font color="red">\d</font>匹配</li>
-<li>匹配常用字符，用<font color="red">\w</font>可以匹配一个字母、数字或下划线，<font color="red">w</font>的意思是<font color="red">word</font></li>
-<li>匹配空格字符，用<font color="red">\s</font>可以匹配一个空格字符，注意空格字符不但包括空格<code> </code>，还包括<font color="red">tab</font>字符（在java中用<font color="red">\t</font>表示）</li>
-<li>匹配非数字，用<font color="red">\D</font>匹配非数字，于<font color="red">\d</font>刚好相反，类似的<font color="red">\W</font>可以匹配<font color="red">\w</font>不能匹配的字符，<font coloe="red">\S</font>匹配<font color="red">\s</font>不能匹配的字符</li>
-<li>重复匹配，修饰符<font color="red">*</font>可以匹配任意个字符，包括0个字符</li>
-<li>修饰符<font color="red">+</font> 可以匹配至少一个字符</li>
-<li>修饰符<font color="red">?</font>可以匹配0个或一个字符</li>
-<li>匹配n个字符，用&lt;font color=”red’&gt;{n}</font>就可以</li>
-<li>如果匹配n~m个字符，可以使用<font color="red">{n,m}</font></li>
-<li>修饰符<font color="red">{n,}</font>表示至少匹配n个字符</li>
-</ul>
-</blockquote>
-<p>参考链接：<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/1252599548343744/1304066080636961">正则表达式</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1225,7 +1201,7 @@ gitment.render('container')
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

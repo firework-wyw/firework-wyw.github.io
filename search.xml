@@ -410,7 +410,7 @@ gitment.render('container')
   </entry>
   <entry>
     <title></title>
-    <url>/2021/07/15/attention-bug/</url>
+    <url>/2021/07/19/attention-bug/</url>
     <content><![CDATA[<h1 id="应该注意的语法问题"><a href="#应该注意的语法问题" class="headerlink" title="应该注意的语法问题"></a>应该注意的语法问题</h1><p>问题1：</p>
 <blockquote>
 <p>jpa映射错误</p>
@@ -428,6 +428,31 @@ gitment.render('container')
 <p>获取不到相关属性时，首先考虑是否传值成功，然而这里的问题在于属性的载体类本身就有问题，就算参数正确，也获取不到值，需要考虑是不是类中属性名称写错，private、static等写错，或者类中的注解不正确。</p>
 </blockquote>
 ]]></content>
+  </entry>
+  <entry>
+    <title>nosniff</title>
+    <url>/2021/07/19/nosniff/</url>
+    <content><![CDATA[<p><strong>问题</strong></p>
+<blockquote>
+<p>来自“<a href="http://localhost:8080/login.html%E2%80%9D%E7%9A%84%E8%B5%84%E6%BA%90%E5%B7%B2%E8%A2%AB%E9%98%BB%E6%AD%A2%EF%BC%8C%E5%9B%A0%E4%B8%BA">http://localhost:8080/login.html”的资源已被阻止，因为</a> MIME 类型（“text/html”）不匹配（X-Content-Type-Options: nosniff）</p>
+</blockquote>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><blockquote>
+<p>有网友是这样说的 ：</p>
+<blockquote>
+<p>我想知道该文件是否根本不存在，而 Joomla 会返回默认的 404 响应？</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>然后在浏览器里查看网络资源，果然没有，应该是被Spring Security拦截掉了，然后Spring Security返回的不是网页期待的格式，所有报错。<br>在Spring SecurityConfig中放开css权限就可以了。</p>
+</blockquote>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ol>
+<li><a href="https://developer.mozilla.org/docs/Web/HTTP/Headers/X-Content-Type-Options?utm_source=mozilla&utm_medium=firefox-console-errors&utm_campaign=default">X-Content-Type-Options </a></li>
+<li><a href="https://github.com/gantry/gantry5/issues/2600">自定义文件的位置错误…</a></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>Bug</tag>
+      </tags>
   </entry>
   <entry>
     <title>Spring Bean 的三种定义方式</title>
