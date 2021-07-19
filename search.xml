@@ -409,8 +409,8 @@ gitment.render('container')
       </tags>
   </entry>
   <entry>
-    <title></title>
-    <url>/2021/07/19/attention-bug/</url>
+    <title>jpa映射问题的思考</title>
+    <url>/2021/07/16/attention-bug/</url>
     <content><![CDATA[<h1 id="应该注意的语法问题"><a href="#应该注意的语法问题" class="headerlink" title="应该注意的语法问题"></a>应该注意的语法问题</h1><p>问题1：</p>
 <blockquote>
 <p>jpa映射错误</p>
@@ -428,6 +428,9 @@ gitment.render('container')
 <p>获取不到相关属性时，首先考虑是否传值成功，然而这里的问题在于属性的载体类本身就有问题，就算参数正确，也获取不到值，需要考虑是不是类中属性名称写错，private、static等写错，或者类中的注解不正确。</p>
 </blockquote>
 ]]></content>
+      <tags>
+        <tag>Bug</tag>
+      </tags>
   </entry>
   <entry>
     <title>nosniff</title>
