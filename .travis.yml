@@ -6,8 +6,11 @@ cache: npm
 branches:
   only:
     - master # build master branch only
+install:
+  - npm install
+  - npm run generate:gh-pages
 script:
-  - hexo generate # generate static files
+  - echo "Skipping tests" # generate static files
 deploy:
   provider: pages
   skip-cleanup: true
